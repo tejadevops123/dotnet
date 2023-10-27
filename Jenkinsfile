@@ -31,13 +31,13 @@ pipeline {
          aws configure set aws_secret_access_key $secret_key
          aws configure set default.region ap-south-1
          DOCKER_LOGIN_PASSWORD=$(aws ecr get-login-password  --region ap-south-1)
-         docker login -u AWS -p $DOCKER_LOGIN_PASSWORD 934783222715.dkr.ecr.ap-south-1.amazonaws.com
-	 docker build -t 934783222715.dkr.ecr.ap-south-1.amazonaws.com/demo:SAMPLE-PROJECT-${BUILD_NUMBER} .
-	 docker push 934783222715.dkr.ecr.ap-south-1.amazonaws.com/demo:SAMPLE-PROJECT-${BUILD_NUMBER}
+         docker login -u AWS -p $DOCKER_LOGIN_PASSWORD 527601990580.dkr.ecr.ap-south-1.amazonaws.com
+	 docker build -t 527601990580.dkr.ecr.ap-south-1.amazonaws.com/demo:SAMPLE-PROJECT-${BUILD_NUMBER} .
+	 docker push 527601990580.dkr.ecr.ap-south-1.amazonaws.com/demo:SAMPLE-PROJECT-${BUILD_NUMBER}
           
 	  '''
      }   
-   }
+   } 
 	 
     stage('Deploy  K8'){
             steps {
